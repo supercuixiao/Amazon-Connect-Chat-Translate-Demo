@@ -9,13 +9,13 @@ exports.handler = async function(event, context, callback) {
     if (event.RequestType == "Create") {
         
         var customTerminology = [
-        '"en","es","de"',
-        '"Sunshine and Oranges","Sunshine y Oranges","Sunshine und Oranges"'
+        '"zh","ja","en","es","de"',
+        '"Sunshine and Oranges","Sunshine y Oranges","Sunshine and Oranges","Sunshine y Oranges","Sunshine und Oranges"'
          ].join('\n');
         
         var createTerminologyParams = {
           MergeStrategy: 'OVERWRITE', 
-          Name: 'connectChatTranslate', 
+          Name: 'testconnectChatTranslate', 
           TerminologyData: { 
             File: Buffer.from(customTerminology) || 'STRING_VALUE',
             Format: 'CSV' 
